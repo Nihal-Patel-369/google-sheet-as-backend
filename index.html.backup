@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Cafe | The Sky Lounge</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Experience Mr Cafe (The Sky Lounge), a premium multicuisine restaurant offering artisanal coffee, global flavors, and a sanctuary for the senses in Surat.">
+    <meta name="keywords"
+        content="Mr Cafe, The Sky Lounge, multicuisine restaurant, fine dining, Surat cafe, Vesu restaurant, premium dining, rooftop cafe">
+    <meta name="author" content="Mr Cafe">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Mr Cafe | The Sky Lounge">
+    <meta property="og:description"
+        content="A sanctuary for the senses. Experience multicuisine dining in a luxurious sky lounge setting.">
+    <meta property="og:image" content="media/cappuccicno.jpg">
+    <meta property="og:url" content="https://mrcafe-skylounge.com">
+    <meta property="og:type" content="website">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">MR CAFE</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#reservation" class="nav-link">Reservations</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <span class="hero-subtitle animate-fade-up delay-1">The Sky Lounge</span>
+            <h1 class="hero-title animate-fade-up delay-2">
+                Multicuisine <span class="text-gold">Restaurant</span>
+            </h1>
+            <p class="hero-desc animate-fade-up delay-3">
+                Experience the perfect harmony of global flavors and sky-high serenity.
+                A sanctuary for the senses in the heart of Vesu, Surat.
+            </p>
+            <a href="#reservation" class="btn btn-primary animate-fade-up delay-3">Reserve a Table</a>
+        </div>
+        <div class="hero-visual"></div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section-padding menu-section">
+        <div class="container">
+            <div class="section-header text-center reveal-on-scroll">
+                <span class="section-subtitle">Curated Selection</span>
+                <h2 class="section-title">Signature Menu</h2>
+                <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+                    Sourced from the finest ingredients, crafted with passion, and served with elegance.
+                </p>
+            </div>
+
+            <div class="menu-grid" id="menu-container">
+                <!-- Menu items will be injected here by JS -->
+                <div class="menu-item reveal-on-scroll">
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Loading Menu...</h3>
+                    </div>
+                    <p class="menu-item-desc">Connecting to our kitchen...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="section-padding reservation-section">
+        <div class="reservation-overlay"></div>
+        <div class="container">
+            <div class="reservation-container reveal-on-scroll">
+                <input type="time" class="form-control" name="time" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" name="guests" placeholder="Number of Guests" min="1" max="10"
+                required>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+        </div>
+        <div id="form-status" class="text-center" style="margin-top: 20px; color: var(--color-gold);"></div>
+        </form>
+        </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding gallery-section">
+        <div class="container">
+            <div class="section-header text-center reveal-on-scroll">
+                <span class="section-subtitle">Visual Journey</span>
+                <h2 class="section-title">Culinary Moments</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal-on-scroll" onclick="openLightbox(this)">
+                    <img src="media/latte.jpg" alt="Latte Art">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-on-scroll" onclick="openLightbox(this)">
+                    <img src="media/pasta.jpg" alt="Delicious Pasta">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-on-scroll" onclick="openLightbox(this)">
+                    <img src="media/ravioli.jpg" alt="Gourmet Ravioli">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-on-scroll" onclick="openLightbox(this)">
+                    <img src="media/burrito wrap.jpg" alt="Burrito Wrap">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section-padding reviews-section">
+        <div class="container">
+            <div class="section-header text-center reveal-on-scroll">
+                <span class="section-subtitle">Testimonials</span>
+                <h2 class="section-title">Guest Stories</h2>
+            </div>
+            <div class="reviews-carousel-container reveal-on-scroll">
+                <div class="reviews-track" id="reviews-track">
+                    <div class="review-card">
+                        <p class="review-text">"Loading stories..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Experiences (Events) -->
+    <section id="events" class="section-padding" style="background-color: var(--color-bg-dark);">
+        <div class="container">
+            <div class="section-header text-center reveal-on-scroll">
+                <span class="section-subtitle">Exclusive Gatherings</span>
+                <h2 class="section-title">Curated Experiences</h2>
+            </div>
+            <div id="events-grid" class="events-grid">
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Reserve Society (VIP Club) -->
+    <section id="vip" class="section-padding vip-section reveal-on-scroll">
+        <div class="container vip-container">
+            <div class="vip-content">
+                <h2 class="vip-title">Mr Cafe Club</h2>
+                <p class="vip-text">Unlock exclusive access to private events, priority reservations, and
+                    special
+                    tastings.
+                    Membership is complimentary, but limited.</p>
+                <form id="vip-form" class="vip-form">
+                    <input type="text" placeholder="Your Name" required class="vip-input">
+                    <input type="email" placeholder="Email Address" required class="vip-input">
+                    <button type="submit" class="btn-gold">Request Invitation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Admin Modal -->
+    <div id="admin-modal" class="admin-modal">
+        <div class="admin-content">
+            <span class="close-admin" onclick="closeAdmin()">&times;</span>
+            <h2>Admin Dashboard</h2>
+            <div id="admin-login">
+                <input type="password" id="admin-pass" placeholder="Enter Secret Key" class="form-control">
+                <button onclick="adminLogin()" class="btn btn-primary" style="margin-top: 10px;">Login</button>
+            </div>
+            <div id="admin-panel" style="display: none;">
+                <h3>Recent Reservations</h3>
+                <div class="table-container">
+                    <table id="reservations-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Time</th>
+                                <th>Guests</th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Time</th>
+                                <th>Guests</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data injected here -->
+                        </tbody>
+                    </table>
+                </div>
+                <button onclick="refreshReservations()" class="btn" style="margin-top: 20px; font-size: 0.7rem;">Refresh
+                    Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col">
+                    <div class="footer-logo">MR CAFE</div>
+                    <p class="footer-desc">The Sky Lounge. Experience the perfect harmony of global flavors and
+                        sky-high serenity.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/mrcafeskylounge/?hl=en" target="_blank"
+                            class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#reservation">Reservations</a></li>
+                        <li><a href="#events">Events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sns Arista 10th, near Happy Residency,<br>Vesu, Surat, Gujarat 395007</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9274593745</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>nishchaymrcafe@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Mr Cafe. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Configuration (must load first) -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>

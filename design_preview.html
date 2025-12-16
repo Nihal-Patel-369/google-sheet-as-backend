@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Design Options</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .option-container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Option 1: Dark & Gold */
+        .option-1 {
+            background-color: #1a1a1a; /* Dark Charcoal */
+            color: #f5f5f5;
+        }
+        
+        .option-1 h1 {
+            font-family: 'Cinzel', serif;
+            color: #D4AF37; /* Metallic Gold */
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .option-1 p {
+            font-family: 'Lato', sans-serif;
+            color: #ccc;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .option-1 .btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Option 2: Moody & Textured */
+        .option-2 {
+            background-color: #1e2b24; /* Deep Forest Green */
+            color: #e0e0e0;
+            position: relative;
+        }
+
+        .option-2 h1 {
+            font-family: 'Playfair Display', serif;
+            color: #e6cba6; /* Creamy Beige */
+            font-size: 3.5rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .option-2 p {
+            font-family: 'Montserrat', sans-serif;
+            color: #b8cbb8;
+            max-width: 600px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .option-2 .btn {
+            margin-top: 20px;
+            padding: 15px 40px;
+            background: #3e2723; /* Dark Wood tone */
+            border: none;
+            color: #e6cba6;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: black;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="option-container option-1">
+        <div class="label" style="background: #D4AF37; color: #000;">OPTION 1: GILDED NOIR</div>
+        <h1>Lumina Reserve</h1>
+        <p>Experience the pinnacle of artisanal coffee. A sanctuary of taste where dark charcoal meets the brilliance of metallic gold. Sharp, elegant, and timeless.</p>
+        <button class="btn">View Menu</button>
+    </div>
+
+    <div class="option-container option-2">
+        <div class="label">OPTION 2: BOTANICAL HAVEN</div>
+        <h1>Lumina Reserve</h1>
+        <p>Reconnect with the essence of flavor. Deep forest tones and warm wood textures create an intimate atmosphere. Organic, moody, and sophisticated.</p>
+        <button class="btn">Reserve a Table</button>
+    </div>
+
+</body>
+</html>

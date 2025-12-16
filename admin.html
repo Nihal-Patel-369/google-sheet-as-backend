@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Mr Cafe</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Admin-specific styles */
+        .admin-container {
+            min-height: 100vh;
+            padding: 2rem;
+            background-color: var(--color-bg-darker);
+        }
+
+        .admin-header {
+            background: var(--glass-bg);
+            border: var(--glass-border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-header h1 {
+            color: var(--color-gold);
+            font-size: 2rem;
+        }
+
+        .admin-section {
+            background: var(--glass-bg);
+            border: var(--glass-border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+
+        .admin-section h2 {
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--color-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 10% auto;
+            background: var(--glass-bg);
+            border: var(--glass-border);
+            padding: 3rem;
+            border-radius: 8px;
+        }
+
+        .login-container h1 {
+            color: var(--color-gold);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(230, 203, 166, 0.2);
+            color: var(--color-text-cream);
+            font-family: var(--font-body);
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-table th {
+            color: var(--color-gold);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .admin-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .event-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(230, 203, 166, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-info h3 {
+            color: var(--color-text-cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-info p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        .btn-refresh {
+            background: transparent;
+            border: 1px solid var(--color-gold);
+            color: var(--color-gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-refresh:hover {
+            background: var(--color-gold);
+            color: var(--color-bg-dark);
+        }
+
+        .event-form {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .form-input {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(230, 203, 166, 0.2);
+            color: var(--color-text-cream);
+            font-family: var(--font-body);
+            border-radius: 4px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-gold);
+        }
+
+        .notification {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .notification.success {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid #28a745;
+            color: #28a745;
+        }
+
+        .notification.error {
+            background: rgba(220, 53, 69, 0.2);
+            border: 1px solid #dc3545;
+            color: #dc3545;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--color-gold);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: var(--color-gold);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-container">
+        <h1><i class="fas fa-lock"></i> Admin Login</h1>
+        <input type="password" id="admin-password" class="login-input" placeholder="Enter Admin Password">
+        <button onclick="handleLogin()" class="btn btn-primary" style="width: 100%;">Login</button>
+        <div id="login-error" class="notification error" style="margin-top: 1rem;"></div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="admin-container" style="display: none;">
+        <!-- Header -->
+        <div class="admin-header">
+            <div>
+                <h1><i class="fas fa-coffee"></i> Mr Cafe Admin Panel</h1>
+                <p style="color: var(--color-text-muted); margin-top: 0.5rem;">Manage reservations and events</p>
+            </div>
+            <button onclick="handleLogout()" class="btn btn-primary">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+
+        <!-- Notifications -->
+        <div id="notification" class="notification"></div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 id="total-reservations">0</h3>
+                <p>Total Reservations</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="total-events">0</h3>
+                <p>Active Events</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="today-reservations">0</h3>
+                <p>Today's Reservations</p>
+            </div>
+        </div>
+
+        <!-- Reservations Section -->
+        <div class="admin-section">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2><i class="fas fa-calendar-check"></i> Reservations</h2>
+                <button onclick="refreshReservations()" class="btn-refresh">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Guests</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservations-tbody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding: 2rem; color: var(--color-text-muted);">
+                                Loading reservations...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Event Management Section -->
+        <div class="admin-section">
+            <h2><i class="fas fa-calendar-alt"></i> Event Management</h2>
+
+            <!-- Create Event Form -->
+            <div
+                style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                <h3 style="color: var(--color-text-cream); margin-bottom: 1rem;">Create New Event</h3>
+                <form id="create-event-form" class="event-form">
+                    <input type="text" name="title" class="form-input" placeholder="Event Title" required>
+                    <input type="date" name="date" class="form-input" required>
+                    <textarea name="description" class="form-input" placeholder="Event Description" rows="3"
+                        required></textarea>
+                    <input type="number" name="price" class="form-input" placeholder="Price (₹)" step="0.01" required>
+                    <input type="url" name="image" class="form-input" placeholder="Image URL">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Create Event
+                    </button>
+                </form>
+            </div>
+
+            <!-- Events List -->
+            <h3 style="color: var(--color-text-cream); margin-bottom: 1rem;">Current Events</h3>
+            <div id="events-list">
+                <p style="text-align: center; padding: 2rem; color: var(--color-text-muted);">
+                    Loading events...
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

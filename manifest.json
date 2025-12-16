@@ -1,0 +1,21 @@
+{
+  "name": "Mr Cafe | The Sky Lounge",
+  "short_name": "Mr Cafe",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1e2b24",
+  "theme_color": "#D4AF37",
+  "description": "Experience Mr Cafe (The Sky Lounge), a premium multicuisine restaurant.",
+  "icons": [
+    {
+      "src": "media/cappuccicno.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "media/cappuccicno.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

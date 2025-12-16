@@ -1,0 +1,38 @@
+# Sensitive Configuration Files
+js/config.js
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+
+# API Keys and Secrets
+**/secrets.js
+**/credentials.js
+**/*.key
+**/*.pem
+
+# Development Files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build and Distribution
+dist/
+build/
+*.log
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
