@@ -1,5 +1,7 @@
 /**
  * Configuration for Lumina Reserve
+ * Loaded Successfully
+
  * 
  * ⚠️ WARNING: This file contains sensitive information!
  * DO NOT commit this file to version control
